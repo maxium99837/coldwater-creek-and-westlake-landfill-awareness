@@ -40,7 +40,7 @@ nav ul{list-style:none;margin:0;padding:10px 16px;display:flex;gap:14px;justify-
 nav a{color:var(--text);text-decoration:none;padding:6px 10px;border-radius:8px; transition: 0.2s;}
 nav a:hover{background:rgba(255,255,255,.1)}
 
-/* Specific style for the music player container in nav */
+/* Music player in nav */
 .music-control { display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;}
 
 section{padding:56px 20px}
@@ -63,13 +63,12 @@ section{padding:56px 20px}
 .tag{display:inline-block;background:rgba(240,180,41,.15);color:var(--accent);padding:4px 10px;border-radius:999px;font-size:.8rem;margin-bottom:8px; width: fit-content;}
 
 /* --- FIXED IMAGE STYLES --- */
-/* This ensures images fit inside the cards without stretching */
 .card img {
     width: 100%;
-    height: 220px; /* Fixed height for uniformity */
-    object-fit: cover; /* Crops the image smartly instead of squishing it */
+    height: 220px; 
+    object-fit: cover; 
     border-radius: 12px;
-    margin-top: auto; /* Pushes image to bottom of card if text is short */
+    margin-top: auto;
     border: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -89,7 +88,7 @@ footer{padding:30px 20px;border-top:1px solid rgba(255,255,255,.1);text-align:ce
 /* --- MEMORIAL SECTION STYLES --- */
 .memorial{
     background:linear-gradient(180deg, #162a3f, #0d1f30);
-    border: 1px solid rgba(240, 180, 41, 0.3); /* Gold border for memorial */
+    border: 1px solid rgba(240, 180, 41, 0.3);
     border-radius:20px;
     padding:40px;
     box-shadow: 0 0 40px rgba(0,0,0,0.5);
@@ -104,10 +103,9 @@ footer{padding:30px 20px;border-top:1px solid rgba(255,255,255,.1);text-align:ce
     margin-top:30px;
 }
 
-/* Specific styling for the memorial photos */
 .memorial-grid img {
     width: 100%;
-    height: 300px; /* Taller for personal photos */
+    height: 300px;
     object-fit: cover;
     border-radius: 12px;
     border: 3px solid rgba(255,255,255,0.1);
@@ -119,11 +117,7 @@ footer{padding:30px 20px;border-top:1px solid rgba(255,255,255,.1);text-align:ce
     border-color: var(--accent);
 }
 
-/* Audio Player styling */
-audio {
-    width: 150px;
-    height: 30px;
-}
+audio { width: 150px; height: 30px; }
 </style>
 </head>
 
@@ -190,7 +184,7 @@ audio {
             <div>
                 <span class="tag">Why It Matters</span>
                 <h3>Ongoing Risk</h3>
-                <p>Studies indicate some radioactive materials can become more hazardous over time, extending risk to future generations if not properly remediated.</p>
+                <p>Studies show that this radioactive waste will increase 9 times over the next 200 years, extending risk to future generations if not properly gotten rid of.</p>
             </div>
             <img src="https://media.ksdk.com/assets/KSDK/images/53d3da42-114f-4f48-b5b8-f7e2908ee6cc/53d3da42-114f-4f48-b5b8-f7e2908ee6cc_1920x1080.jpg" alt="Hazmat Site">
         </div>
@@ -201,7 +195,7 @@ audio {
     <div class="container grid three">
         <div class="card">
             <h3>Health Effects</h3>
-            <p>Long-term exposure to radiation has been linked to rare and aggressive cancers and other illnesses reported by residents who lived near Coldwater Creek.</p>
+            <p>Long term exposure to radiation has been linked to very rare and aggressive cancers and other illnesses reported by residents who lived near Coldwater Creek and the West Lake landfill.</p>
             <img src="https://coldwatercreekfacts.com/wp-content/uploads/2022/10/2015-all1.jpg" alt="Protest Signs">
         </div>
 
@@ -213,8 +207,8 @@ audio {
 
         <div class="card">
             <h3>Community Trauma</h3>
-            <p>Families faced illness, loss, and uncertainty—often without clear warnings or timely government action.</p>
-            <img src="https://www.stltoday.com/online/community-impact-coldwater-creek/image_community.jpg" alt="Community gathering">
+            <p>Families have faced illness, loss, and uncertainty, often without clear warnings from the government.</p>
+            <img src="https://s7d2.scene7.com/is/image/TWCNews/West_lake_westlake_landfill_AP_23192777993989_stl_071223?wid=1250&hei=703&$wide-bg$" alt="Community Site">
         </div>
     </div>
 </section>
@@ -243,7 +237,7 @@ audio {
                 <h3>Resources</h3>
                 <p class="muted">EPA, U.S. Army Corps of Engineers, and local reporting provide updates on testing, remediation, and community guidance.</p>
             </div>
-            <img src="https://www.usace.army.mil/Portals/2/Images/FactSheets/FUSRAP_StLouisSites.jpg" alt="Cleanup Site">
+            <img src="https://miro.medium.com/v2/resize:fit:2000/1*gIe1h_m_ZDfIzJxYxLw2cg.jpeg" alt="Radiation Symbol">
         </div>
     </div>
 </section>
