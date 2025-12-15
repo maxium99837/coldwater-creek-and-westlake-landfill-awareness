@@ -7,138 +7,75 @@
 
 <style>
 :root{
-  --bg:#0f2d4b;
-  --bg2:#143a5f;
-  --accent:#f0b429;
-  --text:#e9eef3;
-  --muted:#b8c7d9;
-  --card:#0b2238;
+--bg:#0f2d4b;
+--bg2:#143a5f;
+--accent:#f0b429;
+--text:#e9eef3;
+--muted:#b8c7d9;
+--card:#0b2238;
 }
-
 *{box-sizing:border-box}
-
 body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  color:var(--text);
-  background:linear-gradient(180deg,var(--bg),var(--bg2));
-  line-height:1.6;
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,sans-serif;
+color:var(--text);
+background:linear-gradient(180deg,var(--bg),var(--bg2));
+line-height:1.6;
 }
-
 header{
-  padding:72px 20px 56px;
-  text-align:center;
+padding:72px 20px 56px;
+text-align:center;
+background:radial-gradient(1200px 500px at 50% -200px,#1f5a8a 0%,transparent 60%);
 }
-
+header h1{font-size:clamp(2rem,4vw,3rem);margin:0 0 10px}
+header p{max-width:900px;margin:0 auto;color:var(--muted)}
 nav{
-  position:sticky;
-  top:0;
-  z-index:10;
-  backdrop-filter:blur(8px);
-  background:rgba(11,34,56,.85);
+position:sticky;top:0;z-index:10;
+backdrop-filter:blur(8px);
+background:rgba(11,34,56,.8);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
-
-nav ul{
-  list-style:none;
-  margin:0;
-  padding:10px;
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  padding:6px 10px;
-  border-radius:8px;
-}
+nav ul{list-style:none;margin:0;padding:10px 16px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none;padding:6px 10px;border-radius:8px}
 nav a:hover{background:rgba(255,255,255,.08)}
-
 section{padding:56px 20px}
-.container{max-width:1100px;margin:auto}
+.container{max-width:1100px;margin:0 auto}
 .grid{display:grid;gap:20px}
 .two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-
 .card{
-  background:linear-gradient(180deg,var(--card),#0a1c2e);
-  border-radius:16px;
-  padding:20px;
+background:linear-gradient(180deg,var(--card),#0a1c2e);
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+padding:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
-
-.card img{
-  width:100%;
-  border-radius:12px;
-  margin-top:12px;
+.card h3{margin-top:0}
+.tag{display:inline-block;background:rgba(240,180,41,.15);color:var(--accent);padding:4px 10px;border-radius:999px;font-size:.8rem;margin-bottom:8px}
+.hero-visual{height:220px;border-radius:14px}
+.timeline li{margin-bottom:10px}
+.muted{color:var(--muted)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+background:var(--accent);color:#102235;border:none;
+padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer
 }
-
-.tag{
-  display:inline-block;
-  background:rgba(240,180,41,.15);
-  color:var(--accent);
-  padding:4px 10px;
-  border-radius:999px;
-  font-size:.8rem;
-  margin-bottom:6px;
-}
-
-/* MEMORIAL */
+.btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.25)}
+footer{padding:30px 20px;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:var(--muted)}
 .memorial{
-  background:linear-gradient(180deg,#1a2e44,#0b1f33);
-  border-radius:20px;
-  padding:32px;
-  text-align:center;
+background:linear-gradient(180deg,#1a2e44,#0b1f33);
+border:1px solid rgba(255,255,255,.12);
+border-radius:20px;
+padding:28px
 }
-
-.candle{
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.ribbon{
-  height:4px;
-  background:linear-gradient(90deg,transparent,var(--accent),transparent);
-  margin:20px 0;
-}
-
-/* Gallery */
-.gallery img{
-  cursor:pointer;
-  transition:.3s;
-}
-.gallery img:hover{transform:scale(1.04)}
-
-/* Lightbox */
-#lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:1000;
-}
-#lightbox img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:12px;
-}
-
-/* Music button */
-.music-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:var(--accent);
-  color:#102235;
-  border:none;
-  padding:12px 18px;
-  border-radius:999px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 6px 20px rgba(0,0,0,.3);
+.memorial h2{margin-top:0}
+.memorial .quote{font-style:italic;color:#d7e6ff}
+.img img{width:100%;border-radius:12px}
+.memorial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+margin-top:20px;
 }
 </style>
 </head>
@@ -157,133 +94,121 @@ section{padding:56px 20px}
 
 <header>
 <h1>Coldwater Creek & West Lake Landfill</h1>
-<p>Raising awareness about radioactive contamination in St. Louis and supporting affected families.</p>
+<p>Raising awareness about radioactive contamination in St. Louis, supporting affected families, and demanding accountability and cleanup.</p>
 </header>
 
-<!-- ABOUT -->
 <section id="about">
 <div class="container grid two">
 <div class="card">
 <span class="tag">What</span>
 <h3>The Issue</h3>
-<p>Radioactive waste from the Manhattan Project was improperly stored and disposed of in the St. Louis area.</p>
+<p>Radioactive waste from the Manhattan Project was improperly stored and disposed of in the St. Louis area. Over decades, contamination spread into soil and waterways, including Coldwater Creek, affecting nearby communities.</p>
 <img src="https://moenvironment.org/wp-content/uploads/sites/370/2019/03/ColdwaterCreek_MapPostDispatch_02_29_2012.jpg">
 </div>
 
 <div class="card">
 <span class="tag">Where</span>
 <h3>Communities Affected</h3>
-<p>Bridgeton, Florissant, Hazelwood, and surrounding neighborhoods.</p>
+<p>Bridgeton, Florissant, Hazelwood, and surrounding North St. Louis County neighborhoods—many built on or near contaminated land.</p>
 <img src="https://reca-missouri-resources.org/wp-content/uploads/sites/965/2025/07/RECA-Covered-Zip-Codes-in-proximity-to-Cold-Water-Creek-and-West-Lake-Landfill-Superfund-Sites-St.-Louis-County-07.19.2025-1.png">
 </div>
 </div>
 </section>
 
-<!-- HISTORY -->
 <section id="history">
 <div class="container grid two">
 <div class="card">
 <span class="tag">When</span>
 <h3>How We Got Here</h3>
-<ul>
-<li>1942 – Uranium processing</li>
-<li>1973 – Waste dumped at West Lake</li>
-<li>Present – Ongoing risk</li>
+<ul class="timeline">
+<li><strong>1942:</strong> Uranium processed in St. Louis for the Manhattan Project.</li>
+<li><strong>1946–1966:</strong> Radioactive byproducts stored near the airport and Latty Avenue.</li>
+<li><strong>1973:</strong> Waste dumped at West Lake Landfill.</li>
+<li><strong>2010–Present:</strong> Underground fire at adjacent Bridgeton Landfill raises new concerns.</li>
 </ul>
 </div>
 
 <div class="card">
 <span class="tag">Why It Matters</span>
 <h3>Ongoing Risk</h3>
-<p>Radioactive materials can grow more dangerous over time.</p>
+<p>Studies indicate some radioactive materials can become more hazardous over time, extending risk to future generations if not properly remediated.</p>
 <img src="https://media.ksdk.com/assets/KSDK/images/53d3da42-114f-4f48-b5b8-f7e2908ee6cc/53d3da42-114f-4f48-b5b8-f7e2908ee6cc_1920x1080.jpg">
 </div>
 </div>
 </section>
 
-<!-- IMPACT -->
 <section id="impact">
 <div class="container grid three">
 <div class="card">
 <h3>Health Effects</h3>
+<p>Long-term exposure to radiation has been linked to rare and aggressive cancers and other illnesses reported by residents who lived near Coldwater Creek.</p>
 <img src="https://coldwatercreekfacts.com/wp-content/uploads/2022/10/2015-all1.jpg">
 </div>
+
 <div class="card">
 <h3>Environmental Damage</h3>
+<p>Contamination washed into waterways and soil, spreading beyond original storage sites and into residential areas.</p>
 <img src="https://cdn.muckrock.com/news_images/2024/10/22/Feature-07-scaled-e1727975607897-2048x1229.jpg.2400x800_q85.jpg">
 </div>
+
 <div class="card">
 <h3>Community Trauma</h3>
+<p>Families faced illness, loss, and uncertainty—often without clear warnings or timely government action.</p>
 <img src="https://www.stltoday.com/online/community-impact-coldwater-creek/image_community.jpg">
 </div>
 </div>
 </section>
 
-<!-- MEMORIAL (ONLY SECTION CHANGED) -->
-<section id="memorial">
-<div class="container">
-<div class="memorial">
-<div class="candle">🕯️</div>
-<h2>In Loving Memory of Eleana Waide</h2>
-<div class="ribbon"></div>
-
-<p>
-Eleana Waide lived near the West Lake Landfill and was diagnosed with osteosarcoma on January 7th, 2010.
-She rang the bell in November 2010, but the cancer later spread to her lungs.
-<br><br>
-Her family traveled everywhere seeking treatment. Eleana passed away at home on April 3, 2014.
-<br><br>
-I miss you every day, Aunt Ellie.
-</p>
-
-<div class="grid three gallery">
-<img src="eleana1.jpg" onclick="openLightbox(this)">
-<img src="eleana2.jpg" onclick="openLightbox(this)">
-<img src="eleana3.jpg" onclick="openLightbox(this)">
+<section id="action">
+<div class="container grid two">
+<div class="card">
+<span class="tag">Act</span>
+<h3>What You Can Do</h3>
+<ul>
+<li>Share credible information and maps with neighbors and classmates.</li>
+<li>Attend or help organize community awareness meetings.</li>
+<li>Support affected families through donations and mutual aid.</li>
+<li>Contact local officials to demand cleanup and transparency.</li>
+</ul>
+<div class="cta">
+<a href="https://gofund.me/e0adad508" class="btn">Donate</a>
+<a href="https://c.org/Rb2b7wzQby" class="btn secondary">Sign Petition</a>
+<a href="https://www.usa.gov/elected-officials" class="btn secondary">Contact Officials</a>
 </div>
+</div>
+
+<div class="card">
+<span class="tag">Learn</span>
+<h3>Resources</h3>
+<p class="muted">EPA, U.S. Army Corps of Engineers, and local reporting provide updates on testing, remediation, and community guidance.</p>
+<img src="https://www.usace.army.mil/Portals/2/Images/FactSheets/FUSRAP_StLouisSites.jpg">
 </div>
 </div>
 </section>
 
-<footer style="text-align:center;padding:30px;color:var(--muted)">
-© Awareness Project
-</footer>
+<section id="memorial">
+<div class="container">
+<div class="memorial">
+<h2>In Memory of Eleana Waide</h2>
+<p class="quote">“Loved and remembered.”</p>
 
-<!-- MUSIC -->
-<audio id="bgMusic">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4e38b3a4f0.mp3" type="audio/mpeg">
-</audio>
+<p>
+Eleana Waide lived near the West Lake Landfill and found out she had developed osteosarcoma, which is a type of bone cancer, on January 7th, 2010. In November of 2010 she was declared cancer free and got to ring the bell. But in the summer of 2011 the doctors found out that the cancer had spread to her lungs. My uncle loved her so much, he drove her all over the country trying to find a cure with new experimental drugs, but unfortunately my Aunt Ellie passed away in her home on April 3, 2014. This website was created to help those suffering just like I am, and to bring awareness to those who have lost loved ones. I miss you every day Aunt Ellie. I wish you were still here.
+</p>
 
-<button class="music-btn" onclick="toggleMusic()">🔈 Play Music</button>
-
-<div id="lightbox" onclick="closeLightbox()">
-<img id="lightboxImg">
+<div class="memorial-grid">
+<img src="eleana1.jpg">
+<img src="eleana2.jpg">
+<img src="eleana3.jpg">
 </div>
 
-<script>
-let playing=false;
-function toggleMusic(){
-  const music=document.getElementById("bgMusic");
-  const btn=document.querySelector(".music-btn");
-  if(!playing){
-    music.volume=0.25;
-    music.play();
-    btn.textContent="🔇 Pause Music";
-    playing=true;
-  }else{
-    music.pause();
-    btn.textContent="🔈 Play Music";
-    playing=false;
-  }
-}
-function openLightbox(img){
-  document.getElementById("lightboxImg").src=img.src;
-  document.getElementById("lightbox").style.display="flex";
-}
-function closeLightbox(){
-  document.getElementById("lightbox").style.display="none";
-}
-</script>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© Awareness Project • Built to inform, support, and demand action.</p>
+</footer>
 
 </body>
 </html>
