@@ -1,64 +1,146 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coldwater Creek Awareness</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coldwater Creek & West Lake Landfill Awareness</title>
 
 <style>
 :root{
-  --bg1:#0f3c5f;
-  --bg2:#1c5f6b;
-  --accent:#f6c453;
-  --soft:#eaf4f7;
-  --card:#10324d;
+  --bg:#0f2d4b;
+  --bg2:#143a5f;
+  --accent:#f0b429;
+  --text:#e9eef3;
+  --muted:#b8c7d9;
+  --card:#0b2238;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family:"Segoe UI", system-ui, sans-serif;
-  background:linear-gradient(180deg,var(--bg1),var(--bg2));
-  color:var(--soft);
-  line-height:1.7;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  line-height:1.6;
 }
-nav{position:sticky;top:0;z-index:10;background:rgba(10,40,60,.9)}
-nav ul{display:flex;justify-content:center;gap:18px;list-style:none;padding:12px;margin:0}
-nav a{color:var(--soft);text-decoration:none;padding:8px 14px;border-radius:999px}
-nav a:hover{background:rgba(255,255,255,.15)}
-header{text-align:center;padding:90px 20px 70px}
-section{padding:70px 20px}
+
+header{
+  padding:72px 20px 56px;
+  text-align:center;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(8px);
+  background:rgba(11,34,56,.85);
+}
+
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:10px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:8px;
+}
+nav a:hover{background:rgba(255,255,255,.08)}
+
+section{padding:56px 20px}
 .container{max-width:1100px;margin:auto}
-.grid{display:grid;gap:24px}
+.grid{display:grid;gap:20px}
 .two{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:linear-gradient(180deg,var(--card),#0b253b);border-radius:18px;padding:22px}
-.card img{width:100%;border-radius:14px;margin-top:14px}
-.memorial{background:linear-gradient(180deg,#183e5c,#0e2b42);border-radius:26px;padding:36px;text-align:center}
-.candle{font-size:48px;animation:float 3s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.ribbon{height:4px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:24px 0}
-.gallery img{cursor:pointer}
-#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:1000}
-#lightbox img{max-width:90%;max-height:90%;border-radius:18px}
-/* Music toggle */
-.music-toggle{
+
+.card{
+  background:linear-gradient(180deg,var(--card),#0a1c2e);
+  border-radius:16px;
+  padding:20px;
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-top:12px;
+}
+
+.tag{
+  display:inline-block;
+  background:rgba(240,180,41,.15);
+  color:var(--accent);
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.8rem;
+  margin-bottom:6px;
+}
+
+/* MEMORIAL */
+.memorial{
+  background:linear-gradient(180deg,#1a2e44,#0b1f33);
+  border-radius:20px;
+  padding:32px;
+  text-align:center;
+}
+
+.candle{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.ribbon{
+  height:4px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  margin:20px 0;
+}
+
+/* Gallery */
+.gallery img{
+  cursor:pointer;
+  transition:.3s;
+}
+.gallery img:hover{transform:scale(1.04)}
+
+/* Lightbox */
+#lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+}
+
+/* Music button */
+.music-btn{
   position:fixed;
   bottom:20px;
   right:20px;
-  background:rgba(246,196,83,.9);
-  color:#10324d;
+  background:var(--accent);
+  color:#102235;
   border:none;
-  border-radius:999px;
   padding:12px 18px;
-  font-weight:600;
+  border-radius:999px;
+  font-weight:700;
   cursor:pointer;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
-  z-index:999;
+  box-shadow:0 6px 20px rgba(0,0,0,.3);
 }
-.music-toggle:hover{opacity:.9}
 </style>
-
 </head>
 
 <body>
@@ -67,30 +149,93 @@ section{padding:70px 20px}
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#history">History</a></li>
-<li><a href="#impact">Impact</a></li>
+<li><a href="#impact">Health Impact</a></li>
+<li><a href="#action">Take Action</a></li>
 <li><a href="#memorial">Memorial</a></li>
 </ul>
 </nav>
 
 <header>
 <h1>Coldwater Creek & West Lake Landfill</h1>
-<p>A place for awareness, remembrance, and hope.</p>
+<p>Raising awareness about radioactive contamination in St. Louis and supporting affected families.</p>
 </header>
 
+<!-- ABOUT -->
+<section id="about">
+<div class="container grid two">
+<div class="card">
+<span class="tag">What</span>
+<h3>The Issue</h3>
+<p>Radioactive waste from the Manhattan Project was improperly stored and disposed of in the St. Louis area.</p>
+<img src="https://moenvironment.org/wp-content/uploads/sites/370/2019/03/ColdwaterCreek_MapPostDispatch_02_29_2012.jpg">
+</div>
+
+<div class="card">
+<span class="tag">Where</span>
+<h3>Communities Affected</h3>
+<p>Bridgeton, Florissant, Hazelwood, and surrounding neighborhoods.</p>
+<img src="https://reca-missouri-resources.org/wp-content/uploads/sites/965/2025/07/RECA-Covered-Zip-Codes-in-proximity-to-Cold-Water-Creek-and-West-Lake-Landfill-Superfund-Sites-St.-Louis-County-07.19.2025-1.png">
+</div>
+</div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+<div class="container grid two">
+<div class="card">
+<span class="tag">When</span>
+<h3>How We Got Here</h3>
+<ul>
+<li>1942 – Uranium processing</li>
+<li>1973 – Waste dumped at West Lake</li>
+<li>Present – Ongoing risk</li>
+</ul>
+</div>
+
+<div class="card">
+<span class="tag">Why It Matters</span>
+<h3>Ongoing Risk</h3>
+<p>Radioactive materials can grow more dangerous over time.</p>
+<img src="https://media.ksdk.com/assets/KSDK/images/53d3da42-114f-4f48-b5b8-f7e2908ee6cc/53d3da42-114f-4f48-b5b8-f7e2908ee6cc_1920x1080.jpg">
+</div>
+</div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+<div class="container grid three">
+<div class="card">
+<h3>Health Effects</h3>
+<img src="https://coldwatercreekfacts.com/wp-content/uploads/2022/10/2015-all1.jpg">
+</div>
+<div class="card">
+<h3>Environmental Damage</h3>
+<img src="https://cdn.muckrock.com/news_images/2024/10/22/Feature-07-scaled-e1727975607897-2048x1229.jpg.2400x800_q85.jpg">
+</div>
+<div class="card">
+<h3>Community Trauma</h3>
+<img src="https://www.stltoday.com/online/community-impact-coldwater-creek/image_community.jpg">
+</div>
+</div>
+</section>
+
+<!-- MEMORIAL (ONLY SECTION CHANGED) -->
 <section id="memorial">
 <div class="container">
 <div class="memorial">
 <div class="candle">🕯️</div>
 <h2>In Loving Memory of Eleana Waide</h2>
 <div class="ribbon"></div>
+
 <p>
 Eleana Waide lived near the West Lake Landfill and was diagnosed with osteosarcoma on January 7th, 2010.
-She bravely fought cancer and rang the bell in November 2010. Sadly, the cancer returned and spread to her lungs.
+She rang the bell in November 2010, but the cancer later spread to her lungs.
 <br><br>
-She passed away peacefully at home on April 3, 2014.
+Her family traveled everywhere seeking treatment. Eleana passed away at home on April 3, 2014.
 <br><br>
 I miss you every day, Aunt Ellie.
 </p>
+
 <div class="grid three gallery">
 <img src="eleana1.jpg" onclick="openLightbox(this)">
 <img src="eleana2.jpg" onclick="openLightbox(this)">
@@ -100,16 +245,16 @@ I miss you every day, Aunt Ellie.
 </div>
 </section>
 
-<footer style="text-align:center;padding:40px;opacity:.8">
-Made with care and remembrance
+<footer style="text-align:center;padding:30px;color:var(--muted)">
+© Awareness Project
 </footer>
 
-<!-- Soft instrumental background music -->
-
-<audio id="bgMusic" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4e38b3a4f0.mp3" type="audio/mpeg">
+<!-- MUSIC -->
+<audio id="bgMusic">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4e38b3a4f0.mp3" type="audio/mpeg">
 </audio>
-<button class="music-toggle" onclick="toggleMusic()">🔈 Play Music</button>
+
+<button class="music-btn" onclick="toggleMusic()">🔈 Play Music</button>
 
 <div id="lightbox" onclick="closeLightbox()">
 <img id="lightboxImg">
@@ -118,13 +263,26 @@ Made with care and remembrance
 <script>
 let playing=false;
 function toggleMusic(){
-  const music=document.getElementById('bgMusic');
-  const btn=document.querySelector('.music-toggle');
-  if(!playing){music.volume=0.25;music.play();btn.textContent='🔇 Pause Music';playing=true}
-  else{music.pause();btn.textContent='🔈 Play Music';playing=false}
+  const music=document.getElementById("bgMusic");
+  const btn=document.querySelector(".music-btn");
+  if(!playing){
+    music.volume=0.25;
+    music.play();
+    btn.textContent="🔇 Pause Music";
+    playing=true;
+  }else{
+    music.pause();
+    btn.textContent="🔈 Play Music";
+    playing=false;
+  }
 }
-function openLightbox(img){document.getElementById('lightboxImg').src=img.src;document.getElementById('lightbox').style.display='flex'}
-function closeLightbox(){document.getElementById('lightbox').style.display='none'}
+function openLightbox(img){
+  document.getElementById("lightboxImg").src=img.src;
+  document.getElementById("lightbox").style.display="flex";
+}
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
 </script>
 
 </body>
